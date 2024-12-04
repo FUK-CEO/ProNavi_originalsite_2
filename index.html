@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>味彩ラーメン</title>
+    <meta name="description" content="多彩なメニューでお客様一人一人のお気に入りのラーメンを当店で見つけていただきたいという想いで日々頑張っております！">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <div id="loading-page">
+        <div class="loading-icon">
+            <img src="img/logo_transparent.png" alt="ロゴ">
+        </div>
+        <div class="loading-bar-container">
+
+            <div class="loading-bar"></div>
+            <div class="loading-text">0%</div>
+        </div>
+    </div>
+    <!-- 
+    <div class="cursor"></div> 
+    <div class="cursor-trail"></div>  -->
+
+    <div id="main-content">
+        <header>
+            <div class="header_left">
+                <img src="img/logo_transparent.png" alt="ロゴ">
+                <div class="language-switcher">
+                    <button id="btn-jp">日本語</button>
+                    <button id="btn-en">English</button>
+                </div>
+
+            </div>
+
+
+            <div class="toggle_btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+
+            <nav class="mask">
+                <ul class="navi_link">
+                    <li><a href="#concept" data-en="Concept" data-jp="コンセプト">コンセプト</a></li>
+                    <li><a href="#kodawari" data-en="Strong Point" data-jp="こだわり">こだわり</a></li>
+                    <li><a href="#main_menu" data-en="Recommended Menu" data-jp="イチオシメニュー3選">イチオシメニュー3選</a></li>
+                    <li><a href="#menu_list" data-en="Menu List" data-jp="メニュー一覧">メニュー一覧</a></li>
+                    <li><a href="#news" data-en="News" data-jp="新着情報">新着情報</a></li>
+                    <li><a href="#access" data-en="Access" data-jp="アクセス">アクセス</a></li>
+                    <li><a href="#contact" data-en="Contact" data-jp="お問い合わせ">お問い合わせ</a></li>
+                    <ul class="SNS_icon">
+                        <li>
+                            <a href="https://www.instagram.com" target="_blank" style="margin: 0 10px; color: #FFFFFF;">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #FFFFFF;">
+                                <i class="fab fa-x-twitter fa-2x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com" target="_blank" style="margin: 0 10px; color: #FFFFFF;">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </ul>
+            </nav>
+
+        </header>
+
+        <section class="mainvisual">
+            <video src="img/ramen-mainvisual-video.mp4" autoplay muted playsinline loop></video>
+        </section>
+
+
+        <section id="concept">
+            <div class="wrapper">
+                <h3 class="section_title" data-en="Concept" data-jp="コンセプト">コンセプト</h3>
+                <p data-en="Let's find your favorite ramen here." data-jp="あなたのお気に入りの一杯が、必ずここで見つかる。">
+                    あなたのお気に入りの一杯が、必ずここで見つかる。</p>
+            </div>
+        </section>
+
+        <section id="kodawari">
+            <div class="wrapper">
+                <h3 class="section_title" data-en="Strong Point" data-jp="お店のこだわり">お店のこだわり</h3>
+                <p data-en="We hope that each customer will find their favorite ramen from our diverse menu!"
+                    data-jp="多彩なメニューでお客様一人一人のお気に入りのラーメンを当店で見つけていただきたいという想いで日々頑張っております！">
+                    多彩なメニューでお客様一人一人のお気に入りのラーメンを当店で見つけていただきたいという想いで日々頑張っております！</p>
+            </div>
+        </section>
+
+        <section id="main_menu">
+            <div class="wrapper">
+                <h3 class="section_title" data-en="Three Recommended Menu!" data-jp="イチオシメニュー3選">イチオシメニュー３選！</h3>
+                <ul class="menu-container">
+                    <li class="menu-item" id="menu1">
+                        <img src="img/まぜそば１.jpg" alt="特製まぜそば">
+                        <h4 data-en="Special Mazemen" data-jp="特製まぜそば">特製まぜそば</h4>
+                        <p data-en="The thick noodles are perfectly coated with the rich sauce, making them delicious!"
+                            data-jp="太麺が濃厚ダレに絡まってとてもおいしいです！">太麺が濃厚ダレに絡まってとてもおいしいです！</p>
+
+                    </li>
+                    <li class="menu-item" id="menu2">
+                        <img src="img/塩中華蕎麦1.jpg" alt="あっさり塩中華そば">
+                        <h4 data-en="Mild salt ramen" data-jp="あっさり塩中華そば">あっさり塩中華そば</h4>
+                        <p data-en="Light and easy to eat, the No.1 favorite among women!"
+                            data-jp="あっさりした味わいで食べやすく女性人気No.1!">あっさりした味わいで食べやすく女性人気No.1!</p>
+
+                    </li>
+                    <li class="menu-item" id="menu3">
+                        <img src="img/特製醤油ラーメン.jpg" alt="特製醤油ラーメン">
+                        <h4 data-en="Special Soy-source ramen" data-jp="特製醤油ラーメン">特製醤油ラーメン</h4>
+                        <p data-en="The undisputed No.1 favorite! A perfect match of medium-thick noodles with a special broth simmered for 10 hours with pork and chicken!"
+                            data-jp="不動の人気No.1! 豚と鶏を10時間煮込んだ特製スープに絡みやすい中太麺がベストマッチ!">不動の人気No.1!
+                            豚と鶏を10時間煮込んだ特製スープに絡みやすい中太麺がベストマッチ!</p>
+
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="menu_list">
+            <div class="wrapper">
+                <h3 class="section_title" data-en="Menu List" data-jp="メニュー一覧">メニュー一覧</h3>
+                <ul>
+                    <li class="menu_card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="img/まぜそば１.jpg" alt="特製まぜそば">
+                            </div>
+                            <div class="card-back">
+                                <h3 data-en="Mazemen" data-jp="まぜそば">まぜそば</h3>
+                                <p data-en="The thick noodles are perfectly coated with the rich sauce, making them delicious!"
+                                    data-jp="太麺が濃厚ダレに絡まっておいしいです！">太麺が濃厚ダレに絡まっておいしいです！</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu_card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="img/チャーシュー丼１.jpg" alt="チャーシュー丼1">
+                            </div>
+                            <div class="card-back">
+                                <h3 data-en="Chashu Rice Bowl" data-jp="チャーシュー丼">チャーシュー丼</h3>
+                                <p data-en="The recommended side dish No. 1!! A menu item with unwavering popularity!"
+                                    data-jp="おススメサイドメニューNo.1!!不動の人気メニュー！">おススメサイドメニューNo.1!!不動の人気メニュー！</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu_card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="img/味噌ラーメン1.jpg" alt="味噌ラーメン1">
+                            </div>
+                            <div class="card-back">
+                                <h3 data-en="Rich Miso ramen" data-jp="濃厚味噌ラーメン">濃厚味噌ラーメン</h3>
+                                <p data-en="Thick curly noodles that let you fully savor the rich umami of miso!"
+                                    data-jp="味噌の旨味をふんだんに感じることの出来る縮れ太麺を使用！">味噌の旨味をふんだんに感じることの出来る縮れ太麺を使用！</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu_card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="img/塩中華蕎麦1.jpg" alt="あっさり塩中華蕎麦">
+                            </div>
+                            <div class="card-back">
+                                <h3 data-en="Mild salt ramen" data-jp="あっさり塩中華そば">あっさり塩中華蕎麦</h3>
+                                <p data-en="Light and easy to eat, the No.1 favorite among women!"
+                                    data-jp="あっさりした味わいで食べやすく女性人気No.1!">あっさりした味わいで食べやすく女性人気No.1!</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu_card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="img/餃子1.jpg" alt="餃子1">
+                            </div>
+                            <div class="card-back">
+                                <h3 data-en="Juicy Dumplings" data-jp="肉汁餃子">肉汁餃子</h3>
+                                <p data-en="This is another must-have classic side dish! Our dumplings are bursting with juice, far surpassing those of other places! Be sure to give them a try!"
+                                    data-jp="これも外せない鉄板サイドメニュー！当店のは肉汁の量が他店と段違い！ぜひ一度ご賞味あれ！">
+                                    これも外せない鉄板サイドメニュー！当店のは肉汁の量が他店と段違い！ぜひ一度ご賞味あれ！</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu_card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="img/豚骨１.jpg" alt="豚骨1">
+                            </div>
+                            <div class="card-back">
+                                <h3 data-en="Rich Tonkotsu Ramen" data-jp="濃厚豚骨ラーメン">濃厚豚骨ラーメン</h3>
+                                <p data-en="A timeless favorite that lets you savor the full richness of pork flavor! How about trying it *barikata* style?"
+                                    data-jp="豚の旨味を最大限味わうことの出来る不動の人気メニュー！バリカタでいかがですか？？">
+                                    豚の旨味を最大限味わうことの出来る不動の人気メニュー！バリカタでいかがですか？？</p>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+        <section id="news">
+            <div class="wrapper">
+                <div class="section_title" data-en="News" data-jp="新着情報">新着情報</div>
+                <ul class="news_list">
+                    <li class="news-item">
+                        <h2 data-en="About Our Year-End and New Year Business Hours" data-jp="年末年始の営業について">年末年始の営業について
+                        </h2>
+                        <p data-en="Our Year-End and New Year Business Hours Are as Follows! 
+                            Until December 27th
+                            We’re open as usual!  
+                            (Business hours: 10:00 AM–2:30 PM, 5:00 PM–9:30 PM)
+                            December 28th–January 3rd
+                            We will be closed!
+                            From January 4th
+                            We’re back to regular hours! 
+                            (Business hours: 10:00 AM–2:30 PM, 5:00 PM–9:30 PM)" data-jp="年末年始の営業は以下の通りです！br>
+                            ～12月27日
+                            通常営業してます！
+                            (営業時間10時～14時30分、17時～21時30分)
+                            12月28日～1月3日
+                            お休みいただいてます！>
+                            1月4日～
+                            通常営業してます！
+                            (営業時間10時～14時30分、17時～21時30分) ">
+                            年末年始の営業は以下の通りです！ <br>
+                            ～12月27日 <br>
+                            通常営業してます！<br>
+                            (営業時間10時～14時30分、17時～21時30分)<br>
+                            12月28日～1月3日<br>
+                            お休みいただいてます！<br>
+                            1月4日～<br>
+                            通常営業してます！<br>
+                            (営業時間10時～14時30分、17時～21時30分) <br>
+                        </p>
+                    </li>
+                    <li class="news-item">
+                        <h2 data-en="We will appear on a TV program!" data-jp="テレビ番組に出演します！">テレビ番組に出演します！</h2>
+                        <p data-en="We are excited to announce that our restaurant will be featured on the BS-TBS program 'Ramen o Taberu.' The broadcast details are as follows:  
+                        Date and Time: Sunday, December 15, 2024, from 17:30 to 18:00.  
+                        Additionally, during the program, a special [keyword] will be revealed. If you mention this keyword when you visit our restaurant, you will receive a free chashu topping! Be sure to check it out!"
+                            data-jp="この度なんと、BS-TBSさんの[ラーメンを食べる。]という番組にて当店を紹介していただくことになりました！放送日時は以下の通りです！
+                            日時:2024年12月15日(日) 17:30-18:00
+                            さらに！番組内で公開される、ある[キーワード]をご来店時にお伝えいただくと、無料でチャーシュートッピングするキャンペーンも行いますので、是非是非チェックしてみてくださいね！！">
+                            この度なんと、BS-TBSさんの[ラーメンを食べる。]という番組にて当店を紹介していただくことになりました！放送日時は以下の通りです！<br>
+                            日時:2024年12月15日(日) 17:30-18:00<br>
+                            さらに！番組内で公開される、ある[キーワード]をご来店時にお伝えいただくと、無料でチャーシュートッピングするキャンペーンも行いますので、是非是非チェックしてみてくださいね！！
+                        </p>
+                    </li>
+                    <li class="news-item">
+                        <h2 data-en="[Important Notice] Please do not use the parking lots of nearby businesses!"
+                            data-jp="[注意喚起]近隣店舗さんの駐車場を使わないでください！">[注意喚起]近隣店舗さんの駐車場を使わないでください！</h2>
+                        <p data-en="Thank you for always visiting our restaurant. We are truly happy that you enjoy our meals, but recently, we received a request from a nearby business asking us not to use their parking lot. We deeply regret causing inconvenience to the local businesses and kindly ask that you use the nearby coin parking moving forward. We appreciate your understanding and cooperation."
+                            data-jp="いつも当店にお越しいただきありがとうございます。
+                            当店のお食事を楽しんでいただけることは非常に嬉しいことなのですが、最近近隣店舗さんから[うちの駐車場を使わないでほしい]との注意を受けました。
+                            近隣の方々に迷惑をかけるような行為は当店としても大変悲しい事なので、今後は近くのコインパーキングをご利用ください。
+                            ご理解の程、何卒よろしくお願いいたします。">
+                            いつも当店にお越しいただきありがとうございます。<br>
+                            当店のお食事を楽しんでいただけることは非常に嬉しいことなのですが、最近近隣店舗さんから[うちの駐車場を使わないでほしい]との注意を受けました。<br>
+                            近隣の方々に迷惑をかけるような行為は当店としても大変悲しい事なので、今後は近くのコインパーキングをご利用ください。<br>
+                            ご理解の程、何卒よろしくお願いいたします。
+                        </p>
+                    </li>
+                    <li class="news-item">
+                        <h2 data-en="We have been selected as one of the Top 100 Restaurants (Ramen Category) on Tabelog!"
+                            data-jp="食べログ百名店(ラーメン部門)に選出されました！">食べログ百名店(ラーメン部門)に選出されました！</h2>
+                        <p data-en="We are excited to announce that we have been selected as one of the Top 100 Restaurants (Ramen Category) by Tabelog! We are truly grateful to all of our customers who visit us regularly. To celebrate this achievement, we will be holding a Free Tamago Topping Festival until December 27th! This is a rare opportunity, so we hope you take advantage of it! Thank you for your continued support!"
+                            data-jp="この度、なんと食べログさんの百名店(ラーメン部門)に選出していただくことになりました！
+                            いつも当店に来てくださる皆様には本当に感謝してもしきれません。
+                            百名店選出を記念して、12月27日まで無料味玉トッピングフェスを開催いたします！
+                            またとない機会です！これからも当店をよろしくお願いいたします！">
+                            この度、なんと食べログさんの百名店(ラーメン部門)に選出していただくことになりました！<br>
+                            いつも当店に来てくださる皆様には本当に感謝してもしきれません。<br>
+                            百名店選出を記念して、12月27日まで無料味玉トッピングフェスを開催いたします！<br>
+                            またとない機会です！これからも当店をよろしくお願いいたします！
+                        </p>
+                    </li>
+                    <li class="news-item">
+                        <h2 data-en="Notice of Temporary Closure" data-jp="臨時休業のお知らせ">臨時休業のお知らせ</h2>
+                        <p data-en="As per the title, we will be taking a break on the following dates:
+                        November 10th (Sunday) to 13th (Wednesday), 2024
+                        We apologize for any inconvenience this may cause and sincerely appreciate your understanding.
+                        From the 14th onward, we will be operating with even more energy, so we look forward to your continued support!"
+                            data-jp="掲題の通り、下記日程にて誠に勝手ながらお休みをいただきます。
+                            2024年11月10日(日)～13日(水)
+                            ご迷惑をおかけして大変恐縮ですが、何卒よろしくお願いいたします。
+                            14日以降は、今まで以上に元気に営業していきますので、引き続きご愛顧のほど、よろしくお願いいたします！">
+                            掲題の通り、下記日程にて誠に勝手ながらお休みをいただきます。<br>
+                            2024年11月10日(日)～13日(水)<br>
+                            ご迷惑をおかけして大変恐縮ですが、何卒よろしくお願いいたします。<br>
+                            14日以降は、今まで以上に元気に営業していきますので、引き続きご愛顧のほど、よろしくお願いいたします！
+                        </p>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+
+
+
+
+        <section id="access">
+            <div class="wrapper">
+                <div class="section_title" data-en="Access(Map)" data-jp="アクセス">アクセス</div>
+                <div class="route">
+                    <p data-en="1-13-1 Dogenzaka, Shibuya-ku, Tokyo 150-0043, Japan"
+                        data-jp="〒150-0043 東京都渋谷区道玄坂1丁目13-1">〒150-0043 東京都渋谷区道玄坂1丁目13-1</p>
+                    <p data-en="This Azisai-ramen is located so close to the Shibuya-station! Nice Location!"
+                        data-jp="渋谷駅徒歩2分の好立地！！">渋谷駅徒歩2分の好立地！！</p>
+                </div>
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.780353455473!2d139.69589157520687!3d35.6577828725949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b5636752e73%3A0x9be7e20b5e6573b8!2z44CSMTUwLTAwNDMg5p2x5Lqs6YO95riL6LC35Yy66YGT546E5Z2C77yR5LiB55uu77yR77yT4oiS77yRIE3jg5Pjg6s!5e0!3m2!1sja!2sjp!4v1732088935688!5m2!1sja!2sjp"
+                        width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="wrapper">
+                <div class="section_title" data-en="Contact" data-jp="お問い合わせ">お問い合わせ</div>
+                <form method="post" action="◯◯(URL)">
+                    <dl class="form_item">
+                        <dt>
+                            <label for="name" class="name" data-en="Name" data-jp="名前">名前</label>
+                        </dt>
+                        <dd>
+                            <input type="text">
+                        </dd>
+                    </dl>
+                    <dl class="form_item">
+                        <dt>
+                            <label for="address" class="address" data-en="Mail address"
+                                data-jp="連絡先E-mailアドレス">連絡先E-mailアドレス</label>
+                        </dt>
+                        <dd>
+                            <input type="text">
+                        </dd>
+                    </dl>
+                    <dl class="form_item">
+                        <dt>
+                            <label for="address" class="address" data-en="Content" data-jp="お問い合わせ内容">お問い合わせ内容</label>
+                        </dt>
+                        <dd>
+                            <textarea type="description"></textarea>
+                        </dd>
+                    </dl>
+                    <button type="submit" class="subimit_btn" data-en="Sending" data-jp="送信">送信</button>
+                </form>
+            </div>
+        </section>
+
+
+        <footer>
+            <div class="wrapper">
+                <nav>
+                    <ul class="footer_link">
+                        <li><a href="#concept" data-en="Concept" data-jp="コンセプト">コンセプト</a></li>
+                        <li><a href="#kodawari" data-en="Strong Point" data-jp="こだわり">こだわり</a></li>
+                        <li><a href="#main_menu" data-en="Recommended Menu" data-jp="イチオシメニュー3選">イチオシメニュー3選</a></li>
+                        <li><a href="#menu_list" data-en="Menu List" data-jp="メニュー一覧">メニュー一覧</a></li>
+                        <li><a href="#news" data-en="News" data-jp="新着情報">新着情報</a></li>
+                        <li><a href="#access" data-en="Access" data-jp="アクセス">アクセス</a></li>
+                        <li><a href="#contact" data-en="Contact" data-jp="お問い合わせ">お問い合わせ</a></li>
+                    </ul>
+                    <ul class="SNS_icon">
+                        <li>
+                            <a href="https://twitter.com" target="_blank" style="margin: 0 10px; color: #FFFFFF;">
+                                <i class="fab fa-x-twitter fa-2x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com" target="_blank" style="margin: 0 10px; color: #FFFFFF;">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com" target="_blank" style="margin: 0 10px; color: #FFFFFF;">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </nav>
+                <p>&copy;azisai-ramen 2025</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

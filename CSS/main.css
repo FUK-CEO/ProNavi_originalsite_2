@@ -1,0 +1,774 @@
+body {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    /* cursor: none; */
+    /* デフォルトのカーソルを無効化 */
+
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+/* Loading Page Styles */
+#main-content {
+    opacity: 1;
+    display: none;
+    transition: opacity 3s ease;
+}
+
+#loading-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    /* opacity: 1; */
+    z-index: 1000;
+    transition: opacity 3s ease;
+}
+
+
+.loading-icon {
+    margin-block: 20px;
+}
+
+.loading-icon img {
+    width: 150px;
+    height: 150px;
+}
+
+.loading-bar-container {
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.loading-bar {
+    width: 0;
+    height: 10px;
+    background: linear-gradient(90deg, #ff66f1, #ff9800);
+    border-radius: 5px;
+    transition: width 0.2s;
+}
+
+.loading-text {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+/* カスタムカーソル */
+.cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.2s ease-out;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+/* トレイルエフェクト */
+.cursor-trail {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.756);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: trailAnimation 0.8s ease-out forwards;
+    z-index: 10;
+}
+
+/* トレイルのアニメーション */
+@keyframes trailAnimation {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* ボタンやリンクのホバー時 */
+a:hover,
+button:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+
+
+
+/* header position使えないか一旦放置 */
+
+
+header {
+    display: flex;
+    height: 100px;
+    background-color: rgba(56, 56, 56, 0.5);
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    top: 0;
+}
+
+.header_left {
+    display: flex;
+    align-items: center;
+}
+
+.header_left img {
+    width: 100px;
+    height: 100px;
+}
+
+
+.language-switcher {
+    margin-left: 20px;
+}
+
+
+.language-switcher button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.language-switcher button:hover {
+    background-color: #0056b3;
+}
+
+
+.toggle_btn {
+    position: fixed;
+    background-color: #000000;
+    width: 100px;
+    height: 100px;
+    right: 0;
+    z-index: 10000;
+    top: 0;
+    transition: 0.2s;
+    /* hoverから外した時にもtransitionを設定してあげることで、
+    外した時までしっかり気を使うことの出来る良質プログラマーを演出できると。 */
+}
+
+
+.toggle_btn:hover {
+    opacity: 0.7;
+    transition: 0.2s;
+}
+
+
+
+
+.toggle_btn span {
+    position: absolute;
+    content: "";
+    width: 75px;
+    height: 3px;
+
+    background-color: white;
+}
+
+.toggle_btn span:nth-child(1) {
+    top: 30%;
+    left: 25%;
+    transition: 0.5s;
+}
+
+.toggle_btn span:nth-child(2) {
+    top: 50%;
+    left: 25%;
+    transition: 0.5s;
+}
+
+.toggle_btn span:nth-child(3) {
+    top: 70%;
+    left: 25%;
+    transition: 0.5s;
+}
+
+.open .toggle_btn span:nth-child(1) {
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    top: 50%;
+    left: 25%;
+}
+
+.open .toggle_btn span:nth-child(2) {
+    transform: rotate(45deg);
+    transition: 0.5s;
+    top: 50%;
+    left: 25%;
+}
+
+.open .toggle_btn span:nth-child(3) {
+    transform: rotate(45deg);
+    transition: 0.5s;
+    top: 50%;
+    left: 25%;
+}
+
+
+.mask {
+    /* position: absolute; */
+    opacity: 0;
+    visibility: hidden;
+    /* width: 100%;
+    height: 100vh; */
+    transition: opacity 0.5s, visibility 0.5s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* 背景色を調整 */
+    z-index: 9999;
+}
+
+.open .mask {
+    background-color: rgb(0, 0, 0, 1);
+    /* transition: 0.5s; */
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999;
+    /* top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; */
+}
+
+/* まずmaskを作る、別々のものではない、
+そのマスクを、toggle押したときに出てきて、また押したら消えればいいだけ
+変に消えた時のマスクも別個で設定してたから訳わからなくなっただけ
+つまり、.open .mask .liとかは全部.openなしでいい
+よし！全部消したら万事解決！良かった */
+
+
+
+.mask .navi_link {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    /* display:inline-block;
+    margin-bottom:60px; */
+    text-align: center;
+
+}
+
+
+
+.mask .navi_link li {
+    margin-bottom: 20px;
+}
+
+.mask .navi_link li a {
+    color: white;
+    z-index: 10000;
+    position: relative;
+}
+
+.mask ul li a:hover {
+    opacity: 0.7;
+    transition: 0.2s;
+}
+
+.mask .SNS_icon {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 150px;
+}
+
+
+
+
+
+
+
+
+section {
+    margin-bottom: 150px;
+}
+
+.section_title {
+    font-size: 35px;
+    margin-block: 25px;
+}
+
+
+.mainvisual video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    /* display:block; */
+    z-index: 1;
+    pointer-events: none;
+
+}
+
+.mainvisual {
+    margin-inline: auto;
+    margin-top: 100px;
+    margin-bottom: 70px;
+    z-index: 50;
+}
+
+.wrapper {
+    width: 900px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+
+#concept {
+    z-index: 1;
+}
+
+#concept p {
+    font-size: 23px;
+}
+
+
+#kodawari {
+    z-index: 1;
+}
+
+
+#kodawari p {
+    font-size: 23px;
+}
+
+
+
+
+
+
+#main_menu {
+    height: 700px;
+    position: relative;
+    z-index: -1;
+}
+
+.menu-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 310px;
+
+}
+
+.menu-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.5;
+    text-align: center;
+    z-index: 0;
+}
+
+.menu-item img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.menu-item.active {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 1;
+}
+
+.menu-item.left {
+    transform: translate(-170%, -50%) scale(0.8);
+}
+
+.menu-item.right {
+    transform: translate(100%, -50%) scale(0.8);
+}
+
+
+.menu-item h4 {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.menu-item p {
+    font-size: 12px;
+    margin-block: 15px;
+}
+
+
+
+
+
+#menu_list {
+    position: relative;
+    z-index: -1;
+}
+
+
+#menu_list ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0px;
+}
+
+#menu_list li img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+
+#menu_list li:nth-child(2) img {
+    object-position: 50% 30%;
+}
+
+
+
+
+
+/* メニューカード */
+.menu_card {
+    /* perspective: 1000px; */
+    width: 95%;
+    height: 300px;
+    margin: 10px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.menu_card:hover .card-inner {
+    transform: rotateY(180deg);
+    /* hover時に反転 */
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-back {
+    background-color: black;
+    color: white;
+    transform: rotateY(180deg);
+    /* 裏面は初期状態で180度回転 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-back h3 {
+    font-size: 28px;
+}
+
+.card-back p {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+
+/* 以下Newsリスト、Slickカルーセルも導入して完璧ですわ */
+
+
+
+.news_list {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: -1;
+
+}
+
+.news_list li {
+    border: 1px solid white;
+    padding: 15px;
+    margin-inline: 15px;
+}
+
+
+/* .news-carousel-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} */
+
+.news-item {
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-item h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.news-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+
+
+.slick-prev,
+.slick-next {
+    z-index: 1000;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: #333;
+}
+
+
+
+
+
+
+
+
+.map {
+    margin-block: 25px;
+}
+
+
+#contact label {
+    /* width: 30%; */
+    display: block;
+    margin-top: 20px;
+}
+
+#contact input {
+    width: 70%;
+    background-color: white;
+    margin-top: 15px;
+}
+
+#contact textarea {
+    width: 70%;
+    background-color: white;
+}
+
+
+
+
+#contact button {
+    display: block;
+    margin-top: 30px;
+    background-color: white;
+    padding: 15px 35px;
+    text-align: center;
+    margin-inline: auto;
+}
+
+
+
+.form_item {
+    display: flex;
+}
+
+.form_item dt {
+    width: 30%;
+    text-align: right;
+}
+
+.form_item dd {
+    width: 70%;
+}
+
+
+
+
+
+
+
+footer {
+    /* height: 150px; */
+    background-color: rgba(51, 51, 51, 0.5)
+}
+
+footer .wrapper {
+    padding-top: 35px;
+    padding-bottom: 15px;
+}
+
+
+footer nav {
+    display: flex;
+    justify-content: space-evenly;
+    /* margin-block: 50px; */
+}
+
+.footer_link {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+footer nav ul li a:hover {
+    opacity: 0.7;
+    transition: 0.2s;
+}
+
+
+
+footer .SNS_icon {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+footer .SNS_icon li:nth-of-type(1) {
+    margin-top: 70px;
+}
+
+footer .SNS_icon li:nth-of-type(3) {
+    margin-top: 70px;
+}
+
+footer p {
+    margin-top: 45px;
+}
+
+
+
+@media(max-width:750px) {
+    .wrapper {
+        max-width: 500px;
+        padding-inline: 4%;
+    }
+
+    .mainvisual {
+        height: 100vh;
+    }
+
+    /* widthが100%のせいだね100vhにならないのは */
+
+
+    .section_title {
+        font-size: 23px;
+    }
+
+    #concept p,
+    #kodawari p {
+        font-size: 18px;
+    }
+
+
+
+    #main_menu {
+        height: 500px;
+        /* position: relative;
+        z-index: -1; */
+    }
+
+    .menu-item h4 {
+        font-size: 14px;
+    }
+
+    .menu-item p {
+        font-size: 10px;
+    }
+
+
+
+    .menu-item img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        transition: width 0.5s ease, height 0.5s ease;
+    }
+
+    #menu_list ul {
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .map iframe {
+        width: 450px;
+
+    }
+
+    footer .SNS_icon {
+        flex-direction: column;
+    }
+
+
+    footer .SNS_icon li:nth-of-type(1),
+    footer .SNS_icon li:nth-of-type(3) {
+        margin-top: 0px;
+    }
+
+    .SNS_icon li {
+        margin-bottom: 15px;
+    }
+}
